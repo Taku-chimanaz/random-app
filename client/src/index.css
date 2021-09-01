@@ -1,0 +1,431 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 8vh;
+}
+
+.logo {
+    text-transform: uppercase;
+    initial-letter: 2px;
+}
+
+
+nav {
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    left: 5.5em;
+}
+
+.loader-container { 
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+  }
+  
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+nav a {
+    text-decoration: none;
+    color: black;
+    padding: 8px 30px;
+}
+
+a.active {
+    background-color: #0da37e;
+    border-radius: 5px;
+    color: white;
+}
+
+a:hover {
+    color: white;
+    background-color: #0da37e;
+    border-radius: 5px;
+}
+
+a span {
+    margin-left: 10px;
+}
+
+.modal {
+    background: #0da37e;
+    color: white;
+    font-weight: 600;
+    font-size: .8rem;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    margin: 2em auto;
+}
+
+
+.buttons > button, form button, .stats-buttons > button,  .account > button{
+    padding: 8px 30px;
+    background: none;
+    border: 1px solid #0da37e;
+    border-radius: 5px;
+    background-color: #0da37e;
+    color: #ffffff;
+    text-transform: uppercase;
+    cursor: pointer;;
+}
+
+.buttons {
+    position: relative;
+}
+
+.logout {
+    margin-right: 4em;
+}
+
+form button {
+    margin-top: 2em;
+}
+
+.buttons > button:hover, form button:hover,  .account > button:hover, .section-links button:hover {
+    transform: scale(1.05);
+}
+
+
+.feeds {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas: "options posts interests";
+    margin: 4em 7em 0;
+}
+
+
+
+.options {
+    grid-area: options;
+    position: fixed;
+}
+
+.posts {
+    grid-area: posts;
+}
+
+.hide-posts {
+    display: none;
+}
+
+.interests {
+    grid-area: interests;
+}
+
+.section-links button {
+    display: block;
+    padding: 10px;
+    margin-bottom: 2em;
+    color: #067c5f;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: none;
+    background: none;
+    font-size: 1.01rem;
+    border: none;
+}
+
+.section-links button:hover {
+    color: white;
+    background: #067c5f;
+}
+
+.user-details {
+    margin-top: 8em;
+}
+
+.name {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.handler {
+    font-weight: 440;
+}
+
+.post-form-container, .posts-feeds {
+    background-color: whitesmoke;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+.post-form-container {
+    margin-bottom: 3em;
+}
+
+.post-form, .post {
+    padding: 1.5em;
+}
+
+form {
+    width: 100%;
+}
+
+form input, form button {
+    display: block;
+}
+
+form textarea {
+    width: 100%;
+    height: 105px;
+    border-radius: 5px;
+}
+
+
+/* Post styles */
+
+.posts-feeds {
+    background-color: #ffffff;
+    margin-top: 1em;
+}
+
+
+.post {
+    background-color: whitesmoke;
+    margin-bottom: 2em;
+    
+    
+}
+
+.post-owner {
+    display: flex;
+    position: relative;
+}
+
+.date {
+    position: absolute;
+    right: 0;
+    top: .6em;
+    font-weight: 500;
+}
+
+.identifiers {
+    margin-left: 1em;
+}
+
+.identifiers a {
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+
+.identifiers__name {
+    font-weight: 600;
+    z-index: -10;
+}
+
+.identifiers__identifer {
+    font-weight: 450;
+    margin: .2em 0 0 0em;
+    z-index: -10c;
+}
+
+.post-content {
+    width: 500px;
+    line-height: 28px;
+    margin-top: 1em;
+}
+
+.stats-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 2em;
+}
+
+
+.interest {
+    padding: 10px 20px;
+    display: inline-block;
+    border: 2px solid #0da37e;
+    background: none;
+    border-radius: 5px;
+    margin-bottom: 1em;
+    cursor: pointer;
+}
+
+.interest:hover {
+    background-color: #0da37e;
+    color: white;
+}
+
+.interest-container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-left: 5em;
+}
+
+.interests > h4 {
+    margin-left: 6em;
+    margin-bottom: 2em;
+    line-height: 25px;
+}
+
+.login-form-container, .signup-form-container {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
+.login-form-container form, .signup-form-container form {
+    background-color: whitesmoke;
+    padding: 2.5em 1.9em;
+    width: 25vw;
+}
+
+.login-form-container form input, .signup-form-container form input {
+    padding: .6em 1em;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 1.9em;
+}
+
+.login-form-buttons button, .signup-form-container form button {
+    padding: 8px 20px;
+    display: inline-block;
+    margin-top: 0;
+}
+
+.login-btn {
+    margin-right: 30px;
+}
+
+.return-btn {
+    margin-left: 40px;
+}
+
+.app-name {
+    position: absolute;
+    left: 3em;
+    top: 1.5em;
+    color: #067c5f;
+}
+
+.to-signup-btn {
+    display: block;
+    margin-top: 2em;
+    background: none;
+    border: none;
+    color: black;
+    padding: 0 0 0 .8em;
+}
+
+.to-signup-btn:hover {
+    color: #067c5f;
+}
+
+span {
+    margin-left: 2em;
+    font-weight: 700;
+}
+
+.discover {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8));
+    overflow-y: scroll;
+    overflow-x: hidden;
+    transition: .5s;
+}
+
+.accounts {
+    background-color: white;
+    margin: 5em auto;
+    width: 35vw;
+    padding: 1.9em;
+
+}
+
+.account {
+    display: flex;
+    background-color: whitesmoke;
+    padding: 1.5em;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2em;
+
+}
+
+.profile-details > h4 {
+    font-weight: 500;
+}
+
+.profile-details {
+    position: relative;
+    left: -2em;
+    top: .2em;
+}
+
+
+.profile, .profile-div{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #067c5f;
+}
+
+.close-discover {
+    position: absolute;
+    top: .5em;
+    right: 2em;
+    font-size: 2rem;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+    padding: .2em;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.close-discover:hover {
+    background-color: #067c5f;
+    transform: scale(1.05);
+}
